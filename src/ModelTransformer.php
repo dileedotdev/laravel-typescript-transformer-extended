@@ -123,7 +123,7 @@ class ModelTransformer extends BaseTransformer
     protected function getNewAccessors(): string
     {
         return $this->methods
-            ->filter(fn (ReflectionMethod $method) => Attribute::class === $method->getReturnType()?->getName())/*@phpstan-ignore-line */
+            ->filter(fn (ReflectionMethod $method) => Attribute::class === $method->getReturnType()?->getName())/* @phpstan-ignore-line */
             ->mapWithKeys(fn (ReflectionMethod $method) => [$method->getName() => $method])
             ->filter(fn (ReflectionMethod $method, string $property) => $this->shouldTransformField($property))
 
