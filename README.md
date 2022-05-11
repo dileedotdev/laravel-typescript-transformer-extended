@@ -1,6 +1,3 @@
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1" />](https://supportukrainenow.org)
-
 # A set of transformers for spatie/laravel-typescript-transformer
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/dinhdjj/typescript-transformer-extended.svg?style=flat-square)](https://packagist.org/packages/dinhdjj/typescript-transformer-extended)
@@ -10,53 +7,48 @@
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/typescript-transformer-extended.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/typescript-transformer-extended)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
-
-## Installation
-
 You can install the package via composer:
 
 ```bash
-composer require dinhdjj/typescript-transformer-extended
+composer require dinhdjj/laravel-typescript-transformer-extended
 ```
 
-You can publish and run the migrations with:
+## Requirements
 
-```bash
-php artisan vendor:publish --tag="typescript-transformer-extended-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="typescript-transformer-extended-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="typescript-transformer-extended-views"
-```
+    * laravel 9+
+    * Php 8.1+
+    * spatie/laravel-typescript-transformer: ^2.1
 
 ## Usage
 
+Apply transformer to your `typescript-transformer.php` config file.
+
 ```php
-$typescriptTransformerExtended = new Dinhdjj\TypescriptTransformerExtended();
-echo $typescriptTransformerExtended->echoPhrase('Hello, Dinhdjj!');
+// config/typescript-transformer.php
+
+return [
+    // ...
+    'transformers' => [
+        \Dinhdjj\TypescriptTransformerExtended\ModelTransformer::class,
+        \Dinhdjj\TypescriptTransformerExtended\EnumTransformer::class,
+
+        // ...
+    ],
+];
+```
+
+## The effect of transformers
+
+The transformer to generate the typescript for laravel model. It require connect to database on generate.
+
+```php
+\Dinhdjj\TypescriptTransformerExtended\ModelTransformer::class
+```
+
+The transformer to generate the typescript for native php enum.
+
+```php
+\Dinhdjj\TypescriptTransformerExtended\EnumTransformer::class
 ```
 
 ## Testing

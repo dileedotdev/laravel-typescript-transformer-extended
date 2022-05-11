@@ -17,8 +17,10 @@
     ],
     "require": {
         "php": "^8.1",
+        "doctrine/dbal": "^3.3",
+        "illuminate/contracts": "^9.0",
         "spatie/laravel-package-tools": "^1.9.2",
-        "illuminate/contracts": "^9.0"
+        "spatie/laravel-typescript-transformer": "^2.1"
     },
     "require-dev": {
         "nunomaduro/collision": "^6.0",
