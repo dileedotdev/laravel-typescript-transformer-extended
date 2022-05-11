@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "dinhdjj/laravel-typescript-transformer-extended",
+    "description": "A set of transformers for spatie/laravel-typescript-transformer",
     "keywords": [
-        ":vendor_name",
+        "dinhdjj",
         "laravel",
-        ":package_slug"
+        "typescript-transformer-extended"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/dinhdjj/typescript-transformer-extended",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "dinhdjj",
+            "email": "dinhdjj@gmail.com",
             "role": "Developer"
         }
     ],
@@ -34,31 +34,31 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Dinhdjj\\TypescriptTransformerExtended\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Dinhdjj\\TypescriptTransformerExtended\\Database\\Factories\\": "database/factories",
+            "Dinhdjj\\TypescriptTransformerExtended\\Tests\\": "tests"
         }
     },
     "scripts": {
-        "analyse": "vendor/bin/phpstan analyse",
+        "analyse": "vendor/bin/phpstan analyse --ansi",
         "test": "vendor/bin/pest",
         "test-coverage": "vendor/bin/pest --coverage"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
     },
     "extra": {
         "laravel": {
-            "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
-            }
+            "providers": [],
+            "aliases": {}
         }
     },
     "minimum-stability": "dev",
