@@ -2,9 +2,9 @@
 
 namespace Dinhdjj\TypescriptTransformerExtended\Tests;
 
+use Dinhdjj\TypescriptTransformerExtended\TypescriptTransformerExtendedServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Dinhdjj\TypescriptTransformerExtended\TypescriptTransformerExtendedServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -24,7 +24,7 @@ class TestCase extends Orchestra
         ];
     }
 
-    public function getEnvironmentSetUp($app)
+    public function getEnvironmentSetUp($app): void
     {
         config()->set('database.default', 'testing');
 
