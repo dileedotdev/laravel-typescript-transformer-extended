@@ -16,7 +16,7 @@ class EnumTransformer extends BaseTransformer
         $instance = $class->name;
 
         $transformed = '';
-        foreach ($instance::cases() as $case) {
+        foreach ($instance::cases() as $case) { /** @phpstan-ignore-line */
             $value = $case->value;
 
             if (\is_string($value)) {
